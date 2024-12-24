@@ -26,7 +26,7 @@ const linkAction = () => {
     const navMenu = document.getElementById('nav-menu')
     navMenu.classList.remove('show-menu')
 }
-navLink.forEach((el) => el.addEventListener('click', linkAction))
+navLink.forEach((nav) => nav.addEventListener('click', linkAction))
 
 /*==================== ACCORDION SKILLS ====================*/
 const skillsContent = document.getElementsByClassName('skills__content')
@@ -47,7 +47,26 @@ const toggleSkills = () => {
 skillsHeader.forEach((el) => el.addEventListener('click', toggleSkills))
 
 /*==================== QUALIFICATION TABS ====================*/
+const tabs = document.querySelectorAll('[data-target]')
+const tabContents = document.querySelectorAll('[data-content]')
 
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = document.querySelector(tab.dataset.target)
+
+        tabContents.forEach(tabContent => {
+            tabContent.classList.remove('qualification__active')
+        })
+
+        target.classList.add('qualification__active')
+
+        tabs.forEach(el => {
+            el.classList.remove('qualification__active')
+        })
+
+        tab.classList.add('qualification__active')
+    })
+})
 
 /*==================== SERVICES MODAL ====================*/
 
