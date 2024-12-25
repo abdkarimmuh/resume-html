@@ -1163,6 +1163,7 @@ img {
   .main,
   .footer__container {
     padding: 0 1rem;
+    align-items: center;
   }
 
   .nav {
@@ -1289,6 +1290,7 @@ img {
 
   .footer__container {
     grid-template-columns: repeat(3, 1fr);
+    align-items: center;
   }
 
   .footer__bg {
