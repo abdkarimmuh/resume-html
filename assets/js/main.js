@@ -32,15 +32,15 @@ navLink.forEach((nav) => nav.addEventListener("click", linkAction));
 const skillsContent = document.getElementsByClassName("skills__content");
 const skillsHeader = document.querySelectorAll(".skills__header");
 
-const toggleSkills = () => {
-  let itemClass = this.parentNode.className;
+const toggleSkills = (event) => {
+  let itemClass = event.target.parentNode.className;
 
   for (i = 0; i < skillsContent.length; i++) {
     skillsContent[i].className = "skills__content skills__close";
   }
 
   if (itemClass === "skills__content skills__close") {
-    this.parentNode.className = "skills__content skills__open";
+    event.target.parentNode.className = "skills__content skills__open";
   }
 };
 
@@ -121,18 +121,15 @@ let swiperTestimonial = new Swiper(".testimonial__container", {
   },
   breakpoints: {
     568: {
-        slidesPerView: 2
-    }
-  }
+      slidesPerView: 2,
+    },
+  },
 });
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 
-
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 
-
 /*==================== SHOW SCROLL UP ====================*/
-
 
 /*==================== DARK LIGHT THEME ====================*/
